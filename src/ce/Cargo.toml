@@ -1,0 +1,17 @@
+[package]
+name = "ce"
+version = "0.1.0"
+authors = ["sergiu <sergiu.carpov@gmail.com> & thibaud <thibaud.tortech@cea.fr>"]
+build = "build.rs"
+
+[dependencies]
+clap = "~2.24.2"
+#rust-crypto = "^0.2"
+shared = { path = "../shared" }
+walkdir = "1"
+rayon = "0.8.2"
+rand = "0.3"
+openssl-sys = "*"
+
+[build-dependencies]
+gcc = "0.3"

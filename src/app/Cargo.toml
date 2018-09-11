@@ -1,0 +1,16 @@
+[package]
+name = "app"
+version = "0.1.0"
+authors = ["Thibaud Tortech <thibaud.tortech@cea.fr>"]
+build = "build.rs"
+
+[dependencies]
+sgx_types = { path = "../../../rust-sgx-sdk/sgx_types" }
+shared = { path = "../shared" }
+clap = "~2.24.2"
+walkdir = "1"
+rayon = "0.8.2"
+
+[build-dependencies]
+gcc = "0.3"
+

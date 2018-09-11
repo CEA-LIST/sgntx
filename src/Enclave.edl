@@ -1,0 +1,29 @@
+enclave {
+	
+    trusted {
+        // public sgx_status_t say_something([in, size=len] const uint8_t* some_string, size_t len);
+	public void encl_init( uint32_t nb_control,
+			       uint32_t nb_case,
+			       uint32_t keys_per_block,
+			       uint32_t nb_keys,
+                               size_t   snp_cnt,
+                               uint8_t  output_allele_freq);
+
+	public void encl_register( uint32_t fid, uint8_t kind );
+				    
+	public uint32_t encl_run( uint32_t fid,
+	       			  uint32_t blk_nb,
+				  [in, size=len] const uint8_t* blk, uint64_t len);
+
+	public uint32_t encl_begin( uint32_t fid );
+	
+	public uint8_t encl_end(void);
+    };
+    
+    untrusted {
+        void ocall_print_string([in, size=len] const char *str, size_t len);
+        void ocall_append_file([in, size=len] const char *ptr, size_t len, uint8_t chisq_file);
+    };
+
+ 
+};
