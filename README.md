@@ -92,13 +92,10 @@ git clone https://github.com/CEA-LIST/sgntx.git
 cd sgntx
 ```
 
-Update `rust-sgx-sdk` submodule to v1.0.0 tag:
+Update `rust-sgx-sdk` submodule (v1.0.0 tag is cloned by default):
 ```
 git submodule init
 git submodule update
-cd rust-sgx-sdk
-git checkout v1.0.0
-cd ..
 ```
 
 Run [`baiduxlab/sgx-rust`](https://hub.docker.com/r/baiduxlab/sgx-rust/) version 1.0.0 docker image:
