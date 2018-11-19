@@ -93,6 +93,7 @@ git clone https://github.com/CEA-LIST/sgntx.git
 
 Update `rust-sgx-sdk` submodule to v1.0.0 tag:
 ```
+git submodule init
 git submodule update
 cd rust-sgx-sdx
 git checkout v1.0.0
