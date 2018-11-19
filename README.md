@@ -89,13 +89,14 @@ We suppose Intel SGX drivers were already installed. See https://01.org/intel-so
 Clone `sgntx` repository:
 ```
 git clone https://github.com/CEA-LIST/sgntx.git
+cd sgntx
 ```
 
 Update `rust-sgx-sdk` submodule to v1.0.0 tag:
 ```
 git submodule init
 git submodule update
-cd rust-sgx-sdx
+cd rust-sgx-sdk
 git checkout v1.0.0
 cd ..
 ```
