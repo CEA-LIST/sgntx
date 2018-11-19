@@ -1,18 +1,18 @@
 [package]
 name = "enclave"
 version = "0.1.0"
-authors = ["CEA, LIST - T.Tortech & S.Carpov"]
+authors = [Thibaud Tortech <thibaud.tortech@cea.fr>" & "Sergiu Carpov <sergiu.carpov@cea.fr>]
 build = "build.rs"
 
 [lib]
 crate-type = ["staticlib"]
 
 [dependencies]
-sgx_alloc   = { path = "../../../rust-sgx-sdk/sgx_alloc" }
-sgx_types   = { path = "../../../rust-sgx-sdk/sgx_types" }
-sgx_tstd   =  { path = "../../../rust-sgx-sdk/sgx_tstd" }
-sgx_tcrypto = { path = "../../../rust-sgx-sdk/sgx_tcrypto" }
-sgx_trts    = { path = "../../../rust-sgx-sdk/sgx_trts" }
+sgx_alloc   = { path = "/root/sgx/sgx_alloc" }
+sgx_types   = { path = "/root/sgx/sgx_types" }
+sgx_tstd   =  { path = "/root/sgx/sgx_tstd" }
+sgx_tcrypto = { path = "/root/sgx/sgx_tcrypto" }
+sgx_trts    = { path = "/root/sgx/sgx_trts" }
 
 shared = { path = "../shared" }
 

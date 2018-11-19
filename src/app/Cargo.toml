@@ -5,7 +5,7 @@ authors = ["Thibaud Tortech <thibaud.tortech@cea.fr>"]
 build = "build.rs"
 
 [dependencies]
-sgx_types = { path = "../../../rust-sgx-sdk/sgx_types" }
+sgx_types = { path = "/root/sgx/sgx_types" }
 shared = { path = "../shared" }
 clap = "~2.24.2"
 walkdir = "1"
