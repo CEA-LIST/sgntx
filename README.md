@@ -8,6 +8,9 @@ In particular, the search application was to find the top most significant SNPs 
 
 It had been selected as the best submission amongst other competition entries and was awarded the first prize :clap: :clap: :clap:
 
+Feel free to test it and give us your feedbacks!
+We will be happy to work further on this topic with you, please contact us!
+
 ## Solution details
 
 The analysis algorithm is split into 2 steps:
@@ -78,8 +81,8 @@ To ease results interpretation (and avoid implementing a decryption binary :smil
 ## Implementation details
 
 Rust programming language was used to implement both applications (`./ce` and
-`./app`). Enclave part uses the [Rust-SGX SKD](https://github.com/baidu/rust-
-sgx-sdk) to interface Intel SGX, in particular the docker image it provides.
+`./app`). Enclave part uses the [Rust-SGX SKD](https://github.com/baidu/rust-sgx-sdk) 
+to interface Intel SGX, in particular the docker image it provides.
 
 
 ## Compilation
