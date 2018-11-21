@@ -29,6 +29,11 @@
 #
 #
 
+#
+# This file was adapted for the IDASH 2017 competition
+# by T.Tortech & S.Carpov (CEA, LIST)
+#
+
 ######## SGX SDK Settings ########
 
 SGX_SDK ?= /opt/intel/sgxsdk
@@ -88,7 +93,7 @@ else
 	App_Link_Flags += -lsgx_uae_service
 endif
 
-# App_Link_Flags := $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -lpthread 
+# App_Link_Flags := $(SGX_COMMON_CFLAGS) -L$(SGX_LIBRARY_PATH) -l$(Urts_Library_Name) -lpthread
 # App_C_Objects := $(App_C_Files:.c=.o)
 
 App_Name := bin/app
@@ -108,7 +113,7 @@ KeyExchange_Library_Name := sgx_tkey_exchange
 
 #RustEnclave_Include_Paths := -I$(SGX_SDK)/include -I$(SGX_SDK)/include/tlibc -I$(SGX_SDK)/include/stlport -I$(SGX_SDK)/include/epid -I ./enclave -I./include
 
-# -lcompiler-rt-patch 
+# -lcompiler-rt-patch
 # RustEnclave_Compile_Flags := $(SGX_COMMON_CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector $(RustEnclave_Include_Paths)
 
 RustEnclave_Link_Libs := -Lsrc/enclave/target/release/ -lenclave
@@ -139,7 +144,7 @@ $(Enclave_EDL_Files): $(SGX_EDGER8R) src/Enclave.edl
 
 .phony: app
 app: $(Enclave_EDL_Files)
-	cd src/app && cargo build --release 
+	cd src/app && cargo build --release
 
 $(App_Name): app
 	cp src/app/target/release/app $@
@@ -161,7 +166,7 @@ $(Signed_RustEnclave_Name): $(RustEnclave_Name)
 
 .PHONY: enclave
 enclave: $(Enclave_EDL_Files)
-	cd src/enclave && cargo build --release 
+	cd src/enclave && cargo build --release
 
 #.PHONY: compiler-rt
 #compiler-rt:
@@ -169,7 +174,7 @@ enclave: $(Enclave_EDL_Files)
 
 .PHONY: clean_all clean
 clean_all: clean
-	rm -f $(Enclave_EDL_Files) 
+	rm -f $(Enclave_EDL_Files)
 	cd src/app && cargo clean
 	cd src/enclave && cargo clean
 	cd src/ce && cargo clean
@@ -181,8 +186,8 @@ clean:
 ######## Compression and encryption application ########
 
 .phony: ce
-ce: 
-	cd src/ce && cargo build --release 
+ce:
+	cd src/ce && cargo build --release
 
 $(Ce_Name): ce
 	cp src/ce/target/release/ce $@
